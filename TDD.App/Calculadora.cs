@@ -8,7 +8,7 @@ namespace TDD.App
 {
     public class Calculadora
     {
-        public int Sumar(int v1, int v2)
+        public static int Sumar(int v1, int v2)
         {
             return v1 + v2;
         }

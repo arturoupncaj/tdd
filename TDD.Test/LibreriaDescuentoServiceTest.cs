@@ -19,7 +19,7 @@ namespace TDD.Test
 
             var total = service.GetTotal();
 
-            Assert.AreEqual(10, total);
+            Assert.That(total, Is.EqualTo(10));
         }
 
         [Test]
@@ -32,7 +32,7 @@ namespace TDD.Test
 
             var total = service.GetTotal();
 
-            Assert.AreEqual(20, total);
+            Assert.That(total, Is.EqualTo(20));
         }
 
         [Test]
@@ -46,7 +46,7 @@ namespace TDD.Test
 
             var total = service.GetTotal();
 
-            Assert.AreEqual(30, total);
+            Assert.That(total, Is.EqualTo(30));
         }
 
         [Test]
@@ -59,7 +59,7 @@ namespace TDD.Test
             
             var total = service.GetTotal();
 
-            Assert.AreEqual(19, total);
+            Assert.That(total, Is.EqualTo(19));
         }
 
         [Test]
@@ -72,7 +72,7 @@ namespace TDD.Test
 
             var total = service.GetTotal();
 
-            Assert.AreEqual(20, total);
+            Assert.That(total, Is.EqualTo(20));
         }
 
         [Test]
@@ -86,7 +86,7 @@ namespace TDD.Test
 
             var total = service.GetTotal();
 
-            Assert.AreEqual(27, total);
+            Assert.That(total, Is.EqualTo(27));
         }
 
         [Test]
@@ -101,7 +101,7 @@ namespace TDD.Test
 
             var total = service.GetTotal();
 
-            Assert.AreEqual(38, total);
+            Assert.That(total, Is.EqualTo(38));
         }
 
         [Test]
@@ -114,7 +114,7 @@ namespace TDD.Test
             
             var total = service.GetTotal();
 
-            Assert.AreEqual(20, total);
+            Assert.That(total, Is.EqualTo(20));
         }
     }
 }

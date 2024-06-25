@@ -8,7 +8,7 @@ namespace TDD.App
 {
     public class LibreriaDescuentoService
     {
-        private List<Libro> Libros = new List<Libro>();
+        private readonly List<Libro> Libros = new List<Libro>();
 
         public void AddLibro(Libro libro)
         {
@@ -18,7 +18,6 @@ namespace TDD.App
         public Decimal GetTotal()
         {
             decimal total = 0;
-            Decimal descuento = 1;
             var grupos = Libros.GroupBy(o => o.SagaId);
             foreach (var grupo in grupos) {
                 var noNullSagas = grupo.Where(o => o.SagaId != null);
