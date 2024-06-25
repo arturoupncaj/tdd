@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace TDD.App
 {
-    internal class Class1
+    public class AWSService
     {
+        private string AWS_TOKEN = "KkAkbTHATwJV0PraqaovIqRArJO9B5f7c40K4JqPKgClvVy9ELCG3Ps4C4svZ1pi";
+        public void connect()
+        {
+            
+        }
     }
 }
