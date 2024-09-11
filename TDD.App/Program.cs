@@ -6,11 +6,14 @@ class Program
 {
     static async Task Main(string[] args)
     {
-        var es = new ExchangeService();
-        var service = new ExchangeTotalService(es);
 
-        var result = await service.ObtenerMontoARecibir(1000);
+        Console.WriteLine("Ingrese el monto que desea cambiar:");
+        var monto = Decimal.Parse(Console.ReadLine());
 
-        Console.WriteLine("Monto a recibir: " + result);
+        var casaCambio = new CasaDeCambio(new ExchangeService());
+        var total = await casaCambio.EstimarMontoARecibir(monto);
+
+        Console.WriteLine("Su monto a recibir es: " + total);
+
     }
 }

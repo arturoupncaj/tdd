@@ -7,7 +7,7 @@ public class ApiResponse
     public decimal conversion_rate { get; set; }
 }
 
-public class ExchangeService
+public class ExchangeService: IExchangeService
 {
     public async Task<decimal> GetTipoDeCambioOficial()
     {
@@ -33,9 +33,8 @@ public class ExchangeService
             {
                 // Handle any errors that occur during the request
                 Console.WriteLine($"Request error: {e.Message}");
+                throw e;
             }
         }
-        
-        return 3.7m;
     }
 }
