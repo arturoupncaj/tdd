@@ -42,4 +42,49 @@ public class FunctionesTests
         //Assert
         Assert.AreEqual(13, resultado);
     }
+    
+    [Test]
+    public void EsPalindromeCaso01()
+    {
+        var funciones = new Funciones();
+        var dato1 = "ana";
+        var resultado = funciones.EsPalindrome(dato1);
+        Assert.IsTrue(resultado);
+    }
+    
+    [Test]
+    public void EsPalindromeCaso02()
+    {
+        var funciones = new Funciones();
+        var dato1 = "reconocer";
+        var resultado = funciones.EsPalindrome(dato1);
+        Assert.IsTrue(resultado);
+    }
+    
+    [Test]
+    public void EsPalindromeCaso03()
+    {
+        var funciones = new Funciones();
+        var dato1 = "miercoles";
+        var resultado = funciones.EsPalindrome(dato1);
+        Assert.IsFalse(resultado);
+    }
+    
+    [Test]
+    public void EsPalindromeCaso04()
+    {
+        var funciones = new Funciones();
+        var dato1 = "Reconocer";
+        var resultado = funciones.EsPalindrome(dato1);
+        Assert.IsTrue(resultado);
+    }
+    
+    [Test]
+    public void EsPalindromeCaso05()
+    {
+        var funciones = new Funciones();
+        var dato1 = "Anita lava la tina";
+        var resultado = funciones.EsPalindrome(dato1);
+        Assert.IsTrue(resultado);
+    }
 }

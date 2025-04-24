@@ -7,17 +7,19 @@ class Program
 {
     static async Task Main(string[] args)
     {
-        Console.WriteLine("Ingresa dato 1");
-        var dato = int.Parse(Console.ReadLine());
-        Console.WriteLine("Ingresa dato 2");
-        var dato2 = int.Parse(Console.ReadLine());
-        
-        // algoritmo
-        // var resultado = dato + dato2;
-        var fun = new Funciones();
-        var resultado = fun.Sumar(dato, dato2);
+        Console.WriteLine("Ingresa texto");
+        var text = Console.ReadLine();
         
         // imprimir resultado
-        Console.WriteLine($"El resultado es: {resultado}");
+        var f = new Funciones();
+        var resultado = f.EsPalindrome(text);
+        if (resultado)
+        {
+            Console.WriteLine($"Su palabra '{text}' es palindrome");
+        }
+        else
+        {
+            Console.WriteLine($"Su palabra '{text}' no es palindrome");
+        }
     }
 }
