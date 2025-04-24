@@ -14,5 +14,16 @@ public class Funciones
         reverse = reverse.Replace(" ", "");
         return reverse.ToLower().Equals(text.ToLower());
     }
-    
+    public int ObtenerMayor(List<int> lista)
+    {
+        if (lista.Count == 0)
+            throw new ArgumentException("La lista no puede estar vacía");
+        int mayor = lista[0];
+        foreach (var item in lista)
+        {
+            if (item > mayor)
+                mayor = item;
+        }
+        return mayor;
+    }
 }
