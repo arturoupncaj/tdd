@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="NewDirectory1\" />
+    <Folder Include="NewDirectory2\" />
+  </ItemGroup>
+
 </Project>
