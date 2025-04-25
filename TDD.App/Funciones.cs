@@ -14,5 +14,17 @@ public class Funciones
         reverse = reverse.Replace(" ", "");
         return reverse.ToLower().Equals(text.ToLower());
     }
-    
+    public int ObtenerNumeroMayor(List<int> numeros)
+    {
+
+        int mayor = numeros[0];
+        foreach (var num in numeros)
+        {
+            if (num > mayor)
+            {
+                mayor = num;
+            }
+        }
+        return mayor;
+    }
 }

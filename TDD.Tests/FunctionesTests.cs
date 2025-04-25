@@ -87,4 +87,49 @@ public class FunctionesTests
         var resultado = funciones.EsPalindrome(dato1);
         Assert.IsTrue(resultado);
     }
+    [Test]
+    public void ObtenerNumeroMayorCaso01()
+    {
+        var funciones = new Funciones();
+        var numeros = new List<int> { 1, 5, 3, 9, 2 };
+        var resultado = funciones.ObtenerNumeroMayor(numeros);
+        Assert.AreEqual(9, resultado);
+    }
+
+    [Test]
+    public void ObtenerNumeroMayorCaso02()
+    {
+        var funciones = new Funciones();
+        var numeros = new List<int> { -5, -1, -3, -9, -2 };
+        var resultado = funciones.ObtenerNumeroMayor(numeros);
+        Assert.AreEqual(-1, resultado);
+    }
+
+    [Test]
+    public void ObtenerNumeroMayorCaso03()
+    {
+        var funciones = new Funciones();
+        var numeros = new List<int> { 42 };
+        var resultado = funciones.ObtenerNumeroMayor(numeros);
+        Assert.AreEqual(42, resultado);
+    }
+
+    [Test]
+    public void ObtenerNumeroMayorCaso04()
+    {
+        var funciones = new Funciones();
+        var numeros = new List<int> { 5, 5, 5, 5 };
+        var resultado = funciones.ObtenerNumeroMayor(numeros);
+        Assert.AreEqual(5, resultado);
+    }
+
+    [Test]
+    public void ObtenerNumeroMayorCaso05()
+    {
+        var funciones = new Funciones();
+        var numeros = new List<int> { 100, 20, 50, 99, 101 };
+        var resultado = funciones.ObtenerNumeroMayor(numeros);
+        Assert.AreEqual(101, resultado);
+    }
 }
+
