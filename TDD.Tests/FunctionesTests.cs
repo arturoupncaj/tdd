@@ -130,4 +130,45 @@ public class FunctionesTests
         var resultado = funciones.ObtenerMayor(lista);
         Assert.AreEqual(30, resultado);
     }
+
+    [Test]
+    public void ValidarContrasenaCas01()
+    {
+        var password = "Hello12";
+        var resultado = Funciones.ValidarContrasena(password);
+
+        Assert.AreEqual(resultado,false);
+    }
+
+    [Test]
+    public void ValidarContrasenaCas02()
+    {
+        var password = "HolaPeru";
+        bool resultado = Funciones.ValidarContrasena(password); // Falla por falta de número y caracter especial
+        Assert.AreEqual(false, resultado);
+    }
+
+    [Test]
+    public void ValidarContrasenaCas03()
+    {
+        var password = "HolaPeru#1";
+        bool resultado = Funciones.ValidarContrasena(password); // Cumple todos los requisitos
+        Assert.AreEqual(true, resultado);
+    }
+
+    [Test]
+    public void ValidarContrasenaCas04()
+    {
+        var password = "HolaPeru1";
+        bool resultado = Funciones.ValidarContrasena(password); // Falla por falta de caracter especial
+        Assert.AreEqual(false, resultado);
+    }
+
+    [Test]
+    public void ValidarContrasenaCas05()
+    {
+        var password = "holaperu";
+        bool resultado = Funciones.ValidarContrasena(password); // Falla por falta de mayúscula, número y caracter especial
+        Assert.AreEqual(false, resultado);
+    }
 }

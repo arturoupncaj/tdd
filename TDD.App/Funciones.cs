@@ -1,3 +1,5 @@
+using System.Text.RegularExpressions;
+
 namespace TDD.App;
 
 public class Funciones
@@ -25,5 +27,25 @@ public class Funciones
                 mayor = item;
         }
         return mayor;
+    }
+    public static bool ValidarContrasena(string contrasena)
+    {
+        // Verificar longitud mínima
+        if (contrasena.Length < 8)
+            return false;
+
+        // Verificar que contenga al menos una mayúscula
+        if (!Regex.IsMatch(contrasena, @"[A-Z]"))
+            return false;
+
+        // Verificar que contenga al menos un número
+        if (!Regex.IsMatch(contrasena, @"\d"))
+            return false;
+
+        // Verificar que contenga al menos un carácter especial
+        if (!Regex.IsMatch(contrasena, @"[!@#$%^&*(),.?""{}|<>_\-\\/\[\]=+;:]"))
+            return false;
+
+        return true;
     }
 }
