@@ -164,4 +164,48 @@ public class FunctionesTests
         // Act & Assert
         Assert.Throws<ArgumentException>(() => funciones.EncontrarMayor(null));
     }
+        public void EsContrasenaSegura_Caso01_Valida()
+    {
+        var funciones = new Funciones();
+        var contrasena = "Abcd1234!";
+        var resultado = funciones.EsContrasenaSegura(contrasena);
+        Assert.IsTrue(resultado);
+    }
+
+    [Test]
+    public void EsContrasenaSegura_Caso02_FaltaMayuscula()
+    {
+        var funciones = new Funciones();
+        var contrasena = "abcd1234!";
+        var resultado = funciones.EsContrasenaSegura(contrasena);
+        Assert.IsFalse(resultado);
+    }
+
+    [Test]
+    public void EsContrasenaSegura_Caso03_FaltaSimbolo()
+    {
+        var funciones = new Funciones();
+        var contrasena = "Abcd1234";
+        var resultado = funciones.EsContrasenaSegura(contrasena);
+        Assert.IsFalse(resultado);
+    }
+
+    [Test]
+    public void EsContrasenaSegura_Caso04_MenosDe8Caracteres()
+    {
+        var funciones = new Funciones();
+        var contrasena = "A1!";
+        var resultado = funciones.EsContrasenaSegura(contrasena);
+        Assert.IsFalse(resultado);
+    }
+
+    [Test]
+    public void EsContrasenaSegura_Caso05_FaltaNumero()
+    {
+        var funciones = new Funciones();
+        var contrasena = "Abcd!def";
+        var resultado = funciones.EsContrasenaSegura(contrasena);
+        Assert.IsFalse(resultado);
+    }
+
 }
