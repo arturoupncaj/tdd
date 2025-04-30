@@ -1,3 +1,4 @@
+using NUnit.Framework.Internal;
 using TDD.App;
 
 namespace TDD.Tests;
@@ -86,5 +87,31 @@ public class FunctionesTests
         var dato1 = "Anita lava la tina";
         var resultado = funciones.EsPalindrome(dato1);
         Assert.IsTrue(resultado);
+    }
+
+    [Test]
+    public void EsContrasenaSeguraCaso01()
+    {
+        var funciones = new Funciones();
+        var dato = "Password1!";
+        var resultado = funciones.EsContrasenaSegura(dato);
+        Assert.IsTrue(resultado);
+    }
+    [Test]
+    public void NoEsContrasenaSeguraCaso02()
+    {
+        var funciones = new Funciones();
+        var dato = "Contrasena2024";
+        var resultado = funciones.EsContrasenaSegura(dato);
+        Assert.IsFalse(resultado);
+    }
+
+    [Test]
+    public void NoEsContrasenaSeguraCaso03()
+    {
+        var funciones = new Funciones();
+        var dato = "alex123";
+        var resultado = funciones.EsContrasenaSegura(dato);
+        Assert.IsFalse(resultado);
     }
 }
