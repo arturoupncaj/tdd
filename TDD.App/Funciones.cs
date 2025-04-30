@@ -31,5 +31,16 @@ public class Funciones
         }
         return mayor;
     }
+    public bool EsContrasenaSegura(string contrasena)
+{
+    if (string.IsNullOrEmpty(contrasena) || contrasena.Length < 8)
+        return false;
+
+    bool tieneMayuscula = contrasena.Any(char.IsUpper);
+    bool tieneNumero = contrasena.Any(char.IsDigit);
+    bool tieneSimbolo = contrasena.Any(c => !char.IsLetterOrDigit(c));
+
+    return tieneMayuscula && tieneNumero && tieneSimbolo;
+}
 
 }
