@@ -16,7 +16,7 @@ public class FunctionesTests
         //Assert
         Assert.AreEqual(30, resultado);
     }
-    
+
     [Test]
     public void SumarCaso02()
     {
@@ -29,7 +29,7 @@ public class FunctionesTests
         //Assert
         Assert.AreEqual(30, resultado);
     }
-    
+
     [Test]
     public void SumarCaso03()
     {
@@ -42,7 +42,7 @@ public class FunctionesTests
         //Assert
         Assert.AreEqual(13, resultado);
     }
-    
+
     [Test]
     public void EsPalindromeCaso01()
     {
@@ -51,7 +51,7 @@ public class FunctionesTests
         var resultado = funciones.EsPalindrome(dato1);
         Assert.IsTrue(resultado);
     }
-    
+
     [Test]
     public void EsPalindromeCaso02()
     {
@@ -60,7 +60,7 @@ public class FunctionesTests
         var resultado = funciones.EsPalindrome(dato1);
         Assert.IsTrue(resultado);
     }
-    
+
     [Test]
     public void EsPalindromeCaso03()
     {
@@ -69,7 +69,7 @@ public class FunctionesTests
         var resultado = funciones.EsPalindrome(dato1);
         Assert.IsFalse(resultado);
     }
-    
+
     [Test]
     public void EsPalindromeCaso04()
     {
@@ -78,7 +78,7 @@ public class FunctionesTests
         var resultado = funciones.EsPalindrome(dato1);
         Assert.IsTrue(resultado);
     }
-    
+
     [Test]
     public void EsPalindromeCaso05()
     {
@@ -87,4 +87,59 @@ public class FunctionesTests
         var resultado = funciones.EsPalindrome(dato1);
         Assert.IsTrue(resultado);
     }
-}
+
+    [Test]
+    public void EsContrasenaSegura_Caso01_Valida()
+    {
+        var funciones = new Funciones();
+        var contrasena = "Clave#2024";
+        var resultado = funciones.EsContrasenaSegura(contrasena);
+        Assert.True( resultado);
+    }
+    [Test]
+    public void  EsContrasenaSegura_Caso2_Valida()
+    {
+        var funciones = new Funciones();
+        var contrasena = "Clave#2024";
+        var resultado = funciones.EsContrasenaSegura(contrasena);
+        Assert.True( resultado);
+    }
+    [Test]
+    public void NoEsContrasenaSeguraCaso03_FaltaMayuscula()
+    {
+        var funciones = new Funciones();
+        var dato = "hola@123"; // Falta mayúscula
+        var resultado = funciones.EsContrasenaSegura(dato);
+        Assert.IsFalse(resultado);
+    }
+
+    [Test]
+    public void NoEsContrasenaSeguraCaso04_FaltaSimbolo()
+    {
+        var funciones = new Funciones();
+        var dato = "Clave2024"; // Falta símbolo especial
+        var resultado = funciones.EsContrasenaSegura(dato);
+        Assert.IsFalse(resultado);
+    }
+
+    [Test]
+    public void NoEsContrasenaSeguraCaso05_ContenidoInvalido()
+    {
+        var funciones = new Funciones();
+        var dato = " jjj¿"; // Espacio y carácter no válido
+        var resultado = funciones.EsContrasenaSegura(dato);
+        Assert.IsFalse(resultado);
+    }
+    [Test]
+    public void NoEsContrasenaSeguraCaso06()
+    {
+        var funciones = new Funciones();
+        var dato = "Contrasena2024";
+        var resultado = funciones.EsContrasenaSegura(dato);
+        Assert.IsFalse(resultado);
+    }
+
+
+
+
+} 
